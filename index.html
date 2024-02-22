@@ -13,36 +13,7 @@
         var initialMinutes = 25;
         cookieStore.get({ name: "timer"}).then((cookie) => {
             // Set the initial timer value in minutes
-            console.log(cookie)
-            var initialSeconds = cookie ? JSON.parse(cookie.value) : initialMinutes * 60;
-
-            // Function to update the timer display
-            function updateTimerDisplay(seconds) {
-                var minutes = Math.floor(seconds / 60);
-                var remainingSeconds = seconds % 60;
-                remainingSeconds = remainingSeconds < 10 ? "0" + remainingSeconds : remainingSeconds;
-                document.getElementById("timer").innerHTML = minutes + ":" + remainingSeconds;
-            }
-
-            // Function to start the timer
-            function startTimer() {
-                var seconds = initialSeconds;
-                updateTimerDisplay(seconds);
-                var timerInterval = setInterval(function() {
-                    seconds--;
-                    cookieStore.set({ name: "timer", value: seconds }).then(() => {
-                        console.log(" save")
-                        updateTimerDisplay(seconds);
-                        if (seconds <= 0) {
-                            clearInterval(timerInterval);
-                            alert("Timer has finished!");
-                        }
-                    })
-                }, 1000); // Update timer every second
-            }
-
-            // Call startTimer function to begin countdown
-            startTimer();
+            alert("BLA")
         })
     </script>
 </body>
