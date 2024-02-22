@@ -10,11 +10,13 @@
         25:00
     </div>
     <script>
-        var initialMinutes = 25;
-        cookieStore.get({ name: "timer"}).then((cookie) => {
-            // Set the initial timer value in minutes
-            alert("BLA")
-        })
+        window.onload = () => {
+            var initialMinutes = 25;
+            cookieStore.get({ name: "timer"}).then((cookie) => {
+                // Set the initial timer value in minutes
+                alert("BLA")
+            })
+        }
     </script>
 </body>
 </html>
